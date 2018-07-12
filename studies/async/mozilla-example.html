@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 </head>
 <body>
-  <script src="log.js"></script>
-  <script src="mozilla-example.js"></script>
-  <div id="app"></div>
+<script src="log.js"></script>
+<script src="mozilla-example.js"></script>
+<p>
+    <button onclick="sequentialStart()">Départ séquentiel</button>
+    <button onclick="concurrentStart()">Départ simultané</button>
+    <button onclick="promiseAll()">Promise.all(...)</button>
+    <button onclick="parallel()">Départ en parallèle</button>
+</p>
+<p>
+    <progress name="fast" value="0" max="100"></progress>
+    <progress name="slow" value="0" max="200"></progress>
+</p>
+<div id="log"></div>
 </body>
 </html>
