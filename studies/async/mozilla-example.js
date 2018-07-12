@@ -33,20 +33,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var startSlowProcess = function () { return fillProgressBar(slowProgressBar(), 50); };
-var startFastProcess = function () { return fillProgressBar(fastProgressBar(), 100); };
+var startSlowProcess = function () { return fillProgressBar('Slow process', slowProgressBar(), 100); };
+var startFastProcess = function () { return fillProgressBar('Fast process', fastProgressBar(), 50); };
 var fastProgressBar = function () { return document.querySelector('progress[name=fast]'); };
 var slowProgressBar = function () { return document.querySelector('progress[name=slow]'); };
-var fillProgressBar = function (bar, interval) {
-    Logger.log("Promise (" + interval + "ms) started...");
+var fillProgressBar = function (name, bar, interval) {
+    Logger.log(name + " started...");
     return new Promise(function (resolve) {
         var begin = new Date().valueOf();
         var progress = setInterval(function () {
             bar.value += 5;
             if (bar.value >= bar.max) {
                 clearInterval(progress);
-                resolve("Execution time : " + (new Date().valueOf() - begin) + " ms");
-                Logger.log("Promise (" + interval + "ms) done !");
+                Logger.log(name + " done !");
+                resolve("[" + name + " resolved] Execution time : " + (new Date().valueOf() - begin) + " ms");
             }
         }, interval);
     });

@@ -1,19 +1,19 @@
-let startSlowProcess = () => fillProgressBar(slowProgressBar(), 50);
-let startFastProcess = () => fillProgressBar(fastProgressBar(), 100);
+let startSlowProcess = () => fillProgressBar('Slow process', slowProgressBar(), 100);
+let startFastProcess = () => fillProgressBar('Fast process', fastProgressBar(), 50);
 
 let fastProgressBar = () => document.querySelector('progress[name=fast]');
 let slowProgressBar = () => document.querySelector('progress[name=slow]');
 
-let fillProgressBar = (bar, interval) => {
-  Logger.log(`Promise (${interval}ms) started...`);
+let fillProgressBar = (name, bar, interval) => {
+  Logger.log(`${name} started...`);
   return new Promise(resolve => {
     let begin = new Date().valueOf();
     let progress = setInterval(() => {
       bar.value += 5;
       if (bar.value >= bar.max) {
         clearInterval(progress);
-        resolve(`Execution time : ${new Date().valueOf() - begin} ms`);
-        Logger.log(`Promise (${interval}ms) done !`);
+        Logger.log(`${name} done !`);
+        resolve(`[${name} resolved] Execution time : ${new Date().valueOf() - begin} ms`);
       }
     }, interval)
   });
