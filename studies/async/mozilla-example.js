@@ -33,23 +33,24 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var startSlowProcess = function () { return fillProgressBar(slowProgressBar(), 10); };
-var startFastProcess = function () { return fillProgressBar(fastProgressBar(), 20); };
-var fillProgressBar = function (bar, incr) {
-    Logger.log("Promise(" + incr + ") started...");
-    return new Promise(function (resolve) {
-        var progress = setInterval(function () {
-            bar.value += incr;
-            if (bar.value >= bar.max) {
-                clearInterval(progress);
-                resolve(incr);
-                Logger.log("Promise(" + incr + ") done !");
-            }
-        }, 50);
-    });
-};
+var startSlowProcess = function () { return fillProgressBar(slowProgressBar(), 50); };
+var startFastProcess = function () { return fillProgressBar(fastProgressBar(), 100); };
 var fastProgressBar = function () { return document.querySelector('progress[name=fast]'); };
 var slowProgressBar = function () { return document.querySelector('progress[name=slow]'); };
+var fillProgressBar = function (bar, interval) {
+    Logger.log("Promise (" + interval + "ms) started...");
+    return new Promise(function (resolve) {
+        var begin = new Date().valueOf();
+        var progress = setInterval(function () {
+            bar.value += 5;
+            if (bar.value >= bar.max) {
+                clearInterval(progress);
+                resolve("Execution time : " + (new Date().valueOf() - begin) + " ms");
+                Logger.log("Promise (" + interval + "ms) done !");
+            }
+        }, interval);
+    });
+};
 var resetAll = function () {
     Logger.clear();
     fastProgressBar().value = 0;

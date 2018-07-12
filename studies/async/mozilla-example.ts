@@ -1,22 +1,23 @@
-let startSlowProcess = () => fillProgressBar(slowProgressBar(), 10);
-let startFastProcess = () => fillProgressBar(fastProgressBar(), 20);
-
-let fillProgressBar = (bar, incr) => {
-  Logger.log(`Promise(${incr}) started...`);
-  return new Promise(resolve => {
-    let progress = setInterval(() => {
-      bar.value += incr;
-      if (bar.value >= bar.max) {
-        clearInterval(progress);
-        resolve(incr)
-        Logger.log(`Promise(${incr}) done !`);
-      }
-    }, 50)
-  });
-};
+let startSlowProcess = () => fillProgressBar(slowProgressBar(), 50);
+let startFastProcess = () => fillProgressBar(fastProgressBar(), 100);
 
 let fastProgressBar = () => document.querySelector('progress[name=fast]');
 let slowProgressBar = () => document.querySelector('progress[name=slow]');
+
+let fillProgressBar = (bar, interval) => {
+  Logger.log(`Promise (${interval}ms) started...`);
+  return new Promise(resolve => {
+    let begin = new Date().valueOf();
+    let progress = setInterval(() => {
+      bar.value += 5;
+      if (bar.value >= bar.max) {
+        clearInterval(progress);
+        resolve(`Execution time : ${new Date().valueOf() - begin} ms`);
+        Logger.log(`Promise (${interval}ms) done !`);
+      }
+    }, interval)
+  });
+};
 
 let resetAll = () => {
   Logger.clear();
