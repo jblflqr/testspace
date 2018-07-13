@@ -108,6 +108,6 @@ var promiseAll = function () {
 };
 var parallel = function () {
     resetAll();
-    startSlowProcess().then(function (message) { return Logger.log(message); }); // in this case could be simply written as log(startSlowProcess());
+    startSlowProcess().then(function (message) { return Logger.log(message); });
     startFastProcess().then(function (message) { return Logger.log(message); });
 };

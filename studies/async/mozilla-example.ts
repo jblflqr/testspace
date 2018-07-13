@@ -29,7 +29,7 @@ var sequentialStart = async function () {
   resetAll();
   const slow = await startSlowProcess(); // If the value of the expression following the await operator is not a Promise, it's converted to a resolved Promise.
   const fast = await startFastProcess();
-  Logger.log(slow);
+  Logger.log(slow)
   Logger.log(fast);
 }
 
@@ -51,6 +51,6 @@ var promiseAll = function () {
 
 var parallel = function () {
   resetAll();
-  startSlowProcess().then((message) => Logger.log(message)); // in this case could be simply written as log(startSlowProcess());
+  startSlowProcess().then((message) => Logger.log(message));
   startFastProcess().then((message) => Logger.log(message));
 }
