@@ -3,32 +3,31 @@ var log = function (content) {
     p.innerHTML = content;
     document.body.appendChild(p);
 };
-var Loger = /** @class */ (function () {
-    function Loger() {
+var Logger = /** @class */ (function () {
+    function Logger() {
         this.momentTimerHasBeenTriggered = null;
     }
-    Loger.prototype.container = function () {
+    Logger.prototype.container = function () {
         return document.querySelector(this.containerSelector);
     };
-    Loger.prototype.setContainerSelector = function (selector) {
+    Logger.prototype.setContainerSelector = function (selector) {
         this.containerSelector = selector;
         return this;
     };
-    Loger.prototype.triggerTimer = function () {
+    Logger.prototype.triggerTimer = function () {
         this.momentTimerHasBeenTriggered = new Date();
         return this;
     };
-    Loger.prototype.log = function (content) {
+    Logger.prototype.log = function (content) {
         var el = document.createElement("div");
         el.innerHTML = content;
         this.container().appendChild(el);
         return this;
     };
-    Loger.prototype.clear = function () {
+    Logger.prototype.clear = function () {
         this.momentTimerHasBeenTriggered = null;
         this.container().innerHTML = '';
         return this;
     };
-    return Loger;
+    return Logger;
 }());
-var Logger = new Loger().setContainerSelector('div[id=log]');

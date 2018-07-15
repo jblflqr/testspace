@@ -4,7 +4,7 @@ const log = (content) => {
   document.body.appendChild(p);
 };
 
-class Loger {
+class Logger {
   private containerSelector: string;
   private momentTimerHasBeenTriggered: Date = null;
 
@@ -34,7 +34,4 @@ class Loger {
     this.container().innerHTML = '';
     return this;
   }
-
 }
-
-const Logger = new Loger().setContainerSelector('div[id=log]');

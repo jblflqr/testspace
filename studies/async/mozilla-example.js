@@ -37,22 +37,23 @@ var startSlowProcess = function () { return fillProgressBar('Slow process', slow
 var startFastProcess = function () { return fillProgressBar('Fast process', fastProgressBar(), 50); };
 var fastProgressBar = function () { return document.querySelector('progress[name=fast]'); };
 var slowProgressBar = function () { return document.querySelector('progress[name=slow]'); };
+var logger = new Logger().setContainerSelector('div[id=log]');
 var fillProgressBar = function (name, bar, interval) {
-    Logger.log(name + " started...");
+    logger.log(name + " started...");
     return new Promise(function (resolve) {
         var begin = new Date().valueOf();
         var progress = setInterval(function () {
             bar.value += 5;
             if (bar.value >= bar.max) {
                 clearInterval(progress);
-                Logger.log(name + " done !");
+                logger.log(name + " done !");
                 resolve("[" + name + " resolved] Execution time : " + (new Date().valueOf() - begin) + " ms");
             }
         }, interval);
     });
 };
 var resetAll = function () {
-    Logger.clear();
+    logger.clear();
     fastProgressBar().value = 0;
     slowProgressBar().value = 0;
 };
@@ -69,8 +70,8 @@ var sequentialStart = function () {
                     return [4 /*yield*/, startFastProcess()];
                 case 2:
                     fast = _a.sent();
-                    Logger.log(slow);
-                    Logger.log(fast);
+                    logger.log(slow);
+                    logger.log(fast);
                     return [2 /*return*/];
             }
         });
@@ -85,11 +86,11 @@ var concurrentStart = function () {
                     resetAll();
                     slow = startSlowProcess();
                     fast = startFastProcess();
-                    _b = (_a = Logger).log;
+                    _b = (_a = logger).log;
                     return [4 /*yield*/, slow];
                 case 1:
                     _b.apply(_a, [_e.sent()]);
-                    _d = (_c = Logger).log;
+                    _d = (_c = logger).log;
                     return [4 /*yield*/, fast];
                 case 2:
                     _d.apply(_c, [_e.sent()]); // waits for slow to finish, even though fast is already done!
@@ -102,12 +103,12 @@ var promiseAll = function () {
     resetAll();
     Promise.all([startSlowProcess(), startFastProcess()]).then(function (_a) {
         var slow = _a[0], fast = _a[1];
-        Logger.log(slow);
-        Logger.log(fast);
+        logger.log(slow);
+        logger.log(fast);
     });
 };
 var parallel = function () {
     resetAll();
-    startSlowProcess().then(function (message) { return Logger.log(message); });
-    startFastProcess().then(function (message) { return Logger.log(message); });
+    startSlowProcess().then(function (message) { return logger.log(message); });
+    startFastProcess().then(function (message) { return logger.log(message); });
 };

@@ -33,6 +33,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var logger = new Logger().setContainerSelector('div[id=log]');
 // Promise
 function resolveAfter2Seconds(x) {
     return new Promise(function (resolve) {
@@ -43,9 +44,9 @@ function resolveAfter2Seconds(x) {
 }
 function getValueWithPromise() {
     resolveAfter2Seconds(20).then(function (value) {
-        log("promise result: " + value);
+        logger.log("promise result: " + value);
     });
-    log('I will not wait until promise is resolved');
+    logger.log('I will not wait until promise is resolved');
 }
 getValueWithPromise();
 // Async
@@ -57,11 +58,13 @@ function getValueWithAsync() {
                 case 0: return [4 /*yield*/, this.resolveAfter2Seconds(20)];
                 case 1:
                     value = _a.sent();
-                    log("async result: " + value);
-                    log('I waited promise to be resolved');
+                    logger.log("async result: " + value);
+                    logger.log('I waited promise to be resolved');
                     return [2 /*return*/];
             }
         });
     });
 }
-getValueWithAsync().then(function () { console.log('appel terminé'); });
+getValueWithAsync().then(function () {
+    logger.log('appel terminé');
+});
