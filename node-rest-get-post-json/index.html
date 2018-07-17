@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Basic User Information</title>
+</head>
+<body>
+<form action="http://localhost:8888/user/add" method="POST">
+  <textarea rows="35" cols="100" name="content">
+    {
+      "name": "rest-get-post-json",
+      "version": "1.0.0",
+      "description": "simple server to expose and update a json file",
+      "main": "server.js",
+      "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+      "body-parser": "^1.18.3",
+      "express": "^4.16.3"
+      }
+    }
+  </textarea><br>
+  <input type="submit" value="submit">
+</form>
+</body>
+</html>
