@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/rxjs@6.2.1/bundles/rxjs.umd.min.js"></script>
 </head>
 <body>
-<script src="../async/log.js"></script>
-<script src="https://unpkg.com/rxjs@6.2.1/bundles/rxjs.umd.min.js"></script>
-<script src="test1.js"></script>
 <p>
-  <button>Départ séquentiel</button>
-  <button>Départ simultané</button>
-  <button>Promise.all(...)</button>
-  <button>Départ en parallèle</button>
+    <button id="scanButton">Pure code !</button>
+    <button onclick="concurrentStart()">Départ simultané</button>
+    <button onclick="promiseAll()">Promise.all(...)</button>
+    <button onclick="parallel()">Départ en parallèle</button>
+</p>
+<p>
+    <progress name="fast" value="0" max="100"></progress>
+    <progress name="slow" value="0" max="100"></progress>
 </p>
 <div id="log"></div>
+<script src="../async/log.js"></script>
+<script src="test1.js"></script>
 </body>
 </html>
