@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9ba82ae7-5074-44f0-85d8-6111974f4ee0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rxjs/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/rxjs/test1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rxjs/test1.js" beforeDir="false" afterPath="$PROJECT_DIR$/rxjs/test1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rxjs/test1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rxjs/test1.ts" afterDir="false" />
     </list>
@@ -16,24 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test1.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rxjs/test1.ts">
+      <file leaf-file-name="test1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rxjs/test1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#663#1062#0" />
-                <element signature="e#1086#1169#0" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rxjs/test1.html">
+      <file leaf-file-name="test1.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rxjs/test1.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="607">
+              <caret line="48" column="52" lean-forward="true" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -94,10 +89,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="40" />
-    <option name="width" value="974" />
+    <option name="width" value="1059" />
     <option name="height" value="1167" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -108,9 +103,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,15 +212,18 @@
       <workItem from="1531496299362" duration="6082000" />
       <workItem from="1531756545281" duration="1149000" />
       <workItem from="1531809740607" duration="1202000" />
-      <workItem from="1534794493493" duration="4211000" />
+      <workItem from="1534794493493" duration="4443000" />
+      <workItem from="1535200987343" duration="1329000" />
+      <workItem from="1536869341761" duration="3027000" />
+      <workItem from="1536904295164" duration="1176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40053000" />
+    <option name="totallyTimeSpent" value="45817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="40" width="974" height="1167" extended-state="0" />
+    <frame x="-7" y="40" width="1059" height="1167" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -242,7 +240,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.30634573" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31947485" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -263,8 +261,8 @@
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/async/async.js" />
         <option value="$PROJECT_DIR$/async/log.js" />
+        <option value="$PROJECT_DIR$/async/async.js" />
         <option value="$PROJECT_DIR$/async/mozilla-example.js" />
       </list>
     </option>
@@ -526,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="22107" column="7" lean-forward="true" selection-start-line="22107" selection-start-column="7" selection-end-line="22107" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../node-rest-get-post-json/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -584,19 +575,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rxjs/test1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="4582" column="4" selection-start-line="4582" selection-start-column="4" selection-end-line="4582" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rxjs/test1.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#663#1062#0" />
-            <element signature="e#1086#1169#0" />
-          </folding>
+        <state relative-caret-position="607">
+          <caret line="48" column="52" lean-forward="true" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
         </state>
       </provider>
     </entry>

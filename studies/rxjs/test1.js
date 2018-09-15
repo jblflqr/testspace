@@ -28,3 +28,15 @@ range(1, 10)
     .pipe(filter(function (x) { return x % 2 === 1; }), map(function (x) { return x + x; })).subscribe(function (x) { return console.log(x); });
 var scanButton = document.querySelector('#scanButton');
 fromEvent(scanButton, 'click').pipe(scan(function (count) { return count + 1; }, 0)).subscribe(function (count) { return logger.log("Clicked " + count + " times"); });
+var persons = [
+    { firstname: "Roger", lastname: "DURAND" },
+    { firstname: "Nathalie", lastname: "LEGRAND" },
+    { firstname: "Damien", lastname: "POIKH" }
+];
+// from(persons).subscribe(val => console.log(val));
+var unFiltre = function (p) { return p.lastname.toLowerCase().includes('   k '.trim()); };
+var myFilter = function (p, prop, val) { return p[prop].toLowerCase().includes(val.toLowerCase().trim()); };
+var secondFiltre = function (p) { return myFilter(p, 'firstname', 'a'); };
+var troisiemeFiltre = function (p) { return myFilter(p, 'lastname', '  k '); };
+from(persons)
+    .pipe(filter(function (p) { return p.firstname.includes(''); }), filter(secondFiltre), filter(troisiemeFiltre)).subscribe(function (val) { return console.log(val); });
